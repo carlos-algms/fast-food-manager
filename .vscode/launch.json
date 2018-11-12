@@ -10,7 +10,7 @@
       "request": "launch",
       "url": "http://localhost:4200/#",
       "webRoot": "${workspaceFolder}",
-      "runtimeExecutable": "${workspaceFolder}\\node_modules\\puppeteer\\.local-chromium\\win64-564778\\chrome-win32\\chrome.exe"
+      "runtimeExecutable": "${workspaceFolder}\\node_modules\\puppeteer\\.local-chromium\\win64-599821\\chrome-win\\chrome.exe"
     }
   ]
 }
