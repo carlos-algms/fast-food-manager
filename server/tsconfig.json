@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "../dist/server",
+    "resolveJsonModule": true,
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true
+  }
+}

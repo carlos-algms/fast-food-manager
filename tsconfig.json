@@ -27,7 +27,8 @@
     "skipLibCheck": false,
     "strictFunctionTypes": true,
     "suppressImplicitAnyIndexErrors": false,
-    "newLine": "LF"
+    "newLine": "LF",
+    "resolveJsonModule": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
