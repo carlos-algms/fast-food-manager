@@ -14,8 +14,9 @@
     "typescriptreact",
     "yml"
   ],
+  "editor.formatOnSave": true,
   "editor.rulers": [120],
-  "editor.tabCompletion": true,
+  "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": true,
   "files.eol": "\n",
@@ -30,9 +31,13 @@
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
   },
+  "html.format.endWithNewline": true,
+  "html.format.indentHandlebars": true,
+  "html.format.maxPreserveNewLines": 2,
   "html.suggest.angular1": false,
   "html.suggest.ionic": false,
   "npm.exclude": ["**/node_modules/**", "**/.history/**"],
+  "prettier.disableLanguages": ["vue", "html"],
   "prettier.requireConfig": true,
   "search.exclude": {
     "!**/.temp": false,
@@ -51,9 +56,5 @@
   "typescriptHero.imports.grouping": ["Modules", "Plains", "/^[A-Z].+/", "Workspace", "Remaining"],
   "typescriptHero.imports.removeTrailingIndex": false,
   "vsicons.presets.angular": true,
-  "workbench.editor.showIcons": true,
-  "editor.formatOnSave": true,
-  "html.format.endWithNewline": true,
-  "html.format.indentHandlebars": true,
-  "html.format.maxPreserveNewLines": 2
+  "workbench.editor.showIcons": true
 }
