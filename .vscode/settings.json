@@ -65,5 +65,6 @@
   ],
   "typescriptHero.imports.removeTrailingIndex": false,
   "vsicons.presets.angular": true,
-  "workbench.editor.showIcons": true
+  "workbench.editor.showIcons": true,
+  "editor.formatOnSave": true
 }
