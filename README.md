@@ -1,5 +1,8 @@
 # FastFoodManager
 
+[![Build Status](https://travis-ci.com/carlos-algms/fast-food-manager.svg?branch=master)](https://travis-ci.com/carlos-algms/fast-food-manager)
+![Codecov](https://img.shields.io/codecov/c/github/carlos-algms/fast-food-manager.svg)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
 ## Development server

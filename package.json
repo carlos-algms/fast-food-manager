@@ -5,11 +5,12 @@
     "ng": "ng",
     "start": "run-p server serve",
     "serve": "ng serve",
-    "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
+    "build": "ng build fast-food-manager --prod",
+    "test": "ng test fast-food-manager",
+    "lint": "ng lint fast-food-manager",
     "e2e": "ng e2e",
-    "server": "ts-node --project server/tsconfig.json server/index.ts"
+    "server": "ts-node --project server/tsconfig.json server/index.ts",
+    "codecov": "codecov --token=$CODECOV_TOKEN"
   },
   "private": true,
   "dependencies": {

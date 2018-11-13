@@ -32,6 +32,6 @@
     "skipMetadataEmit": false,
     "strictInjectionParameters": true,
     "annotateForClosureCompiler": true,
-    "enableIvy": true
+    "enableIvy": false
   }
 }
