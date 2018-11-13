@@ -3,28 +3,36 @@
 [![Build Status](https://travis-ci.com/carlos-algms/fast-food-manager.svg?branch=master)](https://travis-ci.com/carlos-algms/fast-food-manager)
 ![Codecov](https://img.shields.io/codecov/c/github/carlos-algms/fast-food-manager.svg)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+### A simple Angular App to manage fast-food recipes and calculate values
 
-## Development server
+#### Highlights
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Continuous Integration using [TravisCI](https://travis-ci.com/carlos-algms/fast-food-manager)
+- Code-coverage report using [CodeCov](https://codecov.io/gh/carlos-algms/fast-food-manager)
+- [Prettier](https://github.com/prettier/prettier) Formatter integrated with TSLint for code consistency
+- [ESLint](https://github.com/buzinas/tslint-eslint-rules) rules for TypeScript to increase lint capabilities
+- [HTML Hint](https://www.npmjs.com/package/htmlhint) for a consistent Markup
+- VSCode default configurations for project, formatters setup and Plugins recommendations for a better integration between developers
 
-## Code scaffolding
+## Project Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Install NodeJS at least the **STABLE** version.
 
-## Build
+https://nodejs.org/en/download/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Install NPM dependencies:
 
-## Running unit tests
+```
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Development Instructions
 
-## Running end-to-end tests
+Just run `npm start` and it will start a REST server and Angular demo server.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Navigate to http://localhost:4200/
 
-## Further help
+### Individual commands for development
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- `npm run server` will spawn the REST server using Express
+- `npm run serve` will start Angular demo server
