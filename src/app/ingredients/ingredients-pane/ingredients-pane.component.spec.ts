@@ -25,13 +25,29 @@ describe('IngredientsPaneComponent', () => {
     spyOn(IngredientsPaneComponent.prototype, 'requestIngredients').and.callFake(() => of(ingredientsJson));
   });
 
-  it('should create', () => {
-    fixture = TestBed.createComponent(IngredientsPaneComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should render all available ingredients', () => {
+    createComponent();
 
     expect(component).toBeTruthy();
     const items = fixture.debugElement.queryAll(By.css('a'));
     expect(items.length).toEqual(ingredientsJson.length);
   });
+
+  it('should emit when click on an ingredient', () => {
+    createComponent();
+    const emitSpy = spyOn(component.ingredientClick$, 'emit');
+    const clickSpy = spyOn(component, 'handleIngredientClick').and.callThrough();
+
+    const firstItem = fixture.debugElement.nativeElement.querySelector('a');
+    firstItem.click();
+
+    expect(emitSpy).toHaveBeenCalled();
+    expect(clickSpy).toHaveBeenCalled();
+  });
+
+  function createComponent() {
+    fixture = TestBed.createComponent(IngredientsPaneComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }
 });
