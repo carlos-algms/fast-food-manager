@@ -14,9 +14,7 @@
     "typescriptreact",
     "yml"
   ],
-  "editor.rulers": [
-    120
-  ],
+  "editor.rulers": [120],
   "editor.tabCompletion": true,
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": true,
@@ -34,10 +32,7 @@
   },
   "html.suggest.angular1": false,
   "html.suggest.ionic": false,
-  "npm.exclude": [
-    "**/node_modules/**",
-    "**/.history/**"
-  ],
+  "npm.exclude": ["**/node_modules/**", "**/.history/**"],
   "prettier.requireConfig": true,
   "search.exclude": {
     "!**/.temp": false,
@@ -49,22 +44,16 @@
     "**/node_modules": true
   },
   "search.useIgnoreFiles": true,
-  "tslint.exclude": [
-    "**/node_modules/**",
-    "**/dist/**"
-  ],
+  "tslint.exclude": ["**/node_modules/**", "**/dist/**"],
   "tslint.jsEnable": true,
   "typescript.tsc.autoDetect": "off",
   "typescript.tsdk": "node_modules\\typescript\\lib",
-  "typescriptHero.imports.grouping": [
-    "Modules",
-    "Plains",
-    "/^[A-Z].+/",
-    "Workspace",
-    "Remaining"
-  ],
+  "typescriptHero.imports.grouping": ["Modules", "Plains", "/^[A-Z].+/", "Workspace", "Remaining"],
   "typescriptHero.imports.removeTrailingIndex": false,
   "vsicons.presets.angular": true,
   "workbench.editor.showIcons": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "html.format.endWithNewline": true,
+  "html.format.indentHandlebars": true,
+  "html.format.maxPreserveNewLines": 2
 }

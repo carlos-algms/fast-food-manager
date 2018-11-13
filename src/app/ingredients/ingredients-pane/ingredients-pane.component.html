@@ -1,0 +1,8 @@
+<section class="card">
+  <header class="card-header">Ingredientes</header>
+  <main class="list-group list-group-flush" *ngIf="(ingredients$ | async) as ingredients">
+    <a href="#" *ngFor="let ingredient of ingredients" class="list-group-item list-group-item-action">
+      {{ ingredient.name }}
+    </a>
+  </main>
+</section>

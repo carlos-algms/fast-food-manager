@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 
-import ingredientsJson from '../../../../server/endpoints/ingredients/ingredients.json';
+import recipesJson from '../../../../server/endpoints/recipes/recipes.json';
 import { RecipesService } from '../recipes.service.js';
 import { RecipesPaneComponent } from './recipes-pane.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +20,7 @@ describe('RecipesPaneComponent', () => {
   }));
 
   beforeEach(() => {
-    spyOn(RecipesPaneComponent.prototype, 'requestRecipes').and.callFake(() => of(ingredientsJson));
+    spyOn(RecipesPaneComponent.prototype, 'requestRecipes').and.callFake(() => of(recipesJson));
   });
 
   it('should create', () => {
@@ -30,6 +30,6 @@ describe('RecipesPaneComponent', () => {
 
     expect(component).toBeTruthy();
     const items = fixture.debugElement.queryAll(By.css('a'));
-    expect(items.length).toEqual(ingredientsJson.length);
+    expect(items.length).toEqual(recipesJson.length);
   });
 });
