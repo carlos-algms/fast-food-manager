@@ -9,7 +9,14 @@ import { Ingredient, IngredientBase } from '../../ingredients/ingredient';
 })
 export class OrderPaneComponent {
   ingredientsMap: Map<number, Ingredient> = new Map();
-  ingredientsList: Ingredient[];
+  _ingredientsList: Ingredient[];
+
+  get ingredientsList() {
+    return this._ingredientsList;
+  }
+  set ingredientsList(ingredientsList: any) {
+    this._ingredientsList = Array.from(ingredientsList);
+  }
 
   addIngredient = ({ id, name, value, amount = 0 }: IngredientBase) => {
     const existentIngredient = this.ingredientsMap.get(id);
@@ -17,7 +24,7 @@ export class OrderPaneComponent {
     const ingredient = new Ingredient(id, name, value, effectiveAmount + 1);
 
     this.ingredientsMap.set(id, ingredient);
-    this.ingredientsList = Array.from(this.ingredientsMap.values());
+    this.ingredientsList = this.ingredientsMap.values();
   };
 
   replaceIngredients = (ingredientsList: IngredientBase[]) => {
@@ -27,6 +34,11 @@ export class OrderPaneComponent {
     }
 
     this.ingredientsMap = ingredientsMap;
-    this.ingredientsList = Array.from(ingredientsMap.values());
+    this.ingredientsList = ingredientsMap.values();
   };
+
+  handleRemoveIngredient(ingredient: IngredientBase) {
+    this.ingredientsMap.delete(ingredient.id);
+    this.ingredientsList = this.ingredientsMap.values();
+  }
 }

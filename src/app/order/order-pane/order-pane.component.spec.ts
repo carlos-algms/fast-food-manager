@@ -69,4 +69,16 @@ describe('OrderPaneComponent', () => {
     expect(component.ingredientsMap.has(4)).toBeTruthy();
     expect(component.ingredientsMap.has(5)).toBeTruthy();
   });
+
+  it('should remove an item', () => {
+    component.addIngredient(ingredient);
+    fixture.detectChanges();
+
+    const removeButton = fixture.debugElement.nativeElement.querySelector('.remove-item');
+    removeButton.click();
+    fixture.detectChanges();
+
+    const items = fixture.debugElement.queryAll(By.css('.list-group-item'));
+    expect(items.length).toEqual(0);
+  });
 });

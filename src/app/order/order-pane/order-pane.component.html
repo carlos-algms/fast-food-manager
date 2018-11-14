@@ -6,7 +6,15 @@
       *ngFor="let ingredient of ingredientsList"
       class="list-group-item fl-cols-container"
     >
-      <span class="">{{ ingredient.name }}</span>
+      <span>
+        <a
+          href="#"
+          class="badge badge-danger badge-pill remove-item"
+          title="Remover ingrediente"
+          (click)="$event.preventDefault(); handleRemoveIngredient(ingredient)"
+        >X</a>
+        {{ ingredient.name }}
+      </span>
       <span class="fl-col-1">{{ ingredient.amount }}</span>
       <span class="fl-col-2">{{ ingredient.total | reais }}</span>
     </li>
