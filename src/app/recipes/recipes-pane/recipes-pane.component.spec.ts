@@ -7,7 +7,7 @@ import recipesJson from '../../../../server/endpoints/recipes/recipes.json';
 import { RecipesService } from '../recipes.service.js';
 import { RecipesPaneComponent } from './recipes-pane.component';
 
-fdescribe('RecipesPaneComponent', () => {
+describe('RecipesPaneComponent', () => {
   let component: RecipesPaneComponent;
   let fixture: ComponentFixture<RecipesPaneComponent>;
 

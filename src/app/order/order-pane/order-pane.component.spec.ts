@@ -54,4 +54,19 @@ describe('OrderPaneComponent', () => {
 
     expect(component.ingredientsMap.get(ingredient.id).amount).toEqual(2);
   });
+
+  it('should replace current ingredients with a new list', () => {
+    const ingredients = [{ ...ingredient, id: 4 }, { ...ingredient, id: 5 }];
+
+    component.addIngredient(ingredient);
+    fixture.detectChanges();
+
+    component.replaceIngredients(ingredients);
+    fixture.detectChanges();
+
+    expect(component.ingredientsList.length).toEqual(2);
+    expect(component.ingredientsMap.has(2)).toBeFalsy();
+    expect(component.ingredientsMap.has(4)).toBeTruthy();
+    expect(component.ingredientsMap.has(5)).toBeTruthy();
+  });
 });

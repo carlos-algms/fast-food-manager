@@ -19,4 +19,14 @@ export class OrderPaneComponent {
     this.ingredientsMap.set(id, ingredient);
     this.ingredientsList = Array.from(this.ingredientsMap.values());
   };
+
+  replaceIngredients = (ingredientsList: IngredientBase[]) => {
+    const ingredientsMap = new Map<number, Ingredient>();
+    for (const { id, name, value, amount } of ingredientsList) {
+      ingredientsMap.set(id, new Ingredient(id, name, value, amount));
+    }
+
+    this.ingredientsMap = ingredientsMap;
+    this.ingredientsList = Array.from(ingredientsMap.values());
+  };
 }
