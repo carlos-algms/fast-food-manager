@@ -1,0 +1,14 @@
+<section class="card">
+  <header class="card-header">Pedido</header>
+
+  <ul class="list-group list-group-flush">
+    <li
+      *ngFor="let ingredient of ingredientsList"
+      class="list-group-item fl-cols-container"
+    >
+      <span class="">{{ ingredient.name }}</span>
+      <span class="fl-col-1">{{ ingredient.amount }}</span>
+      <span class="fl-col-2">{{ ingredient.total | reais }}</span>
+    </li>
+  </ul>
+</section>

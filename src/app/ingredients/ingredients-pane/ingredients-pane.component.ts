@@ -22,7 +22,8 @@ export class IngredientsPaneComponent {
     return this.ingredientsService.getAll();
   }
 
-  handleIngredientClick(ingredient) {
+  handleIngredientClick($event: MouseEvent, ingredient: Ingredient) {
+    $event.preventDefault();
     this.ingredientClick$.emit(ingredient);
   }
 }

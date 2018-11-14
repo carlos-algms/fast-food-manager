@@ -1,10 +1,13 @@
 <section class="fl-cols-container">
   <aside class="fl-rows-container fl-col-3 fl-gutter-5">
     <app-recipes-pane></app-recipes-pane>
-    <app-ingredients-pane></app-ingredients-pane>
+
+    <app-ingredients-pane (ingredientClick$)="orderPane.addIngredient($event)"></app-ingredients-pane>
   </aside>
+
   <aside class="fl-2-cols-container fl-gutter-5">
-    <aside>Pedido</aside>
+    <app-order-pane #orderPane></app-order-pane>
+
     <aside class="fl-rows-container">
       <div>Promoções ativas</div>
       <div>Total</div>
