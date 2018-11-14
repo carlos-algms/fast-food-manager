@@ -10,15 +10,19 @@
 
     <h5 class="mt-3">Descontos:</h5>
 
-    <section class="fl-rows-container">
-      <div class="fl-cols-container">
-        <aside class=""></aside>
-        <aside class="fl-col-3"></aside>
+    <section>
+      <div
+        *ngFor="let discount of discounts"
+        class="fl-cols-container"
+        [title]="discount.description"
+      >
+        <aside>{{ discount.name }}</aside>
+        <aside class="fl-col-3 text-danger">-{{ discount.value | reais }}</aside>
       </div>
 
       <div class="fl-cols-container">
         <strong>Total de descontos:</strong>
-        <aside class="fl-col-3">{{ discountsSum | reais }}</aside>
+        <aside class="fl-col-3 text-danger">-{{ discountsSum | reais }}</aside>
       </div>
     </section>
   </main>
