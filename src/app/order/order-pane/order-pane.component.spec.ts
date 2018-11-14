@@ -1,9 +1,8 @@
-import { CurrencyPipe } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { IngredientBase } from '../../ingredients/ingredient';
-import { ReaisPipe } from '../../utils/pipes/reais.pipe';
+import { UtilsModule } from '../../utils/utils.module';
 import { OrderPaneComponent } from './order-pane.component';
 
 describe('OrderPaneComponent', () => {
@@ -18,8 +17,8 @@ describe('OrderPaneComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [OrderPaneComponent, ReaisPipe],
-      providers: [CurrencyPipe],
+      imports: [UtilsModule],
+      declarations: [OrderPaneComponent],
     }).compileComponents();
   }));
 

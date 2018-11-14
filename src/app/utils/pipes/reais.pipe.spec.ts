@@ -1,8 +1,9 @@
-import { CurrencyPipe, registerLocaleData } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import pt from '@angular/common/locales/pt';
 import { LOCALE_ID } from '@angular/core';
 import { async, inject, TestBed } from '@angular/core/testing';
 
+import { UtilsModule } from '../utils.module';
 import { ReaisPipe } from './reais.pipe';
 
 registerLocaleData(pt);
@@ -13,7 +14,8 @@ describe('Display Reais pipe', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [CurrencyPipe, ReaisPipe, { provide: LOCALE_ID, useValue: 'pt-BR' }],
+      imports: [UtilsModule],
+      providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
     }).compileComponents();
   }));
 

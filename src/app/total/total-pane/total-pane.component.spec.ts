@@ -1,9 +1,8 @@
-import { CurrencyPipe } from '@angular/common';
 import { SimpleChange } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Ingredient } from '../../ingredients/ingredient';
-import { ReaisPipe } from '../../utils/pipes/reais.pipe';
+import { UtilsModule } from '../../utils/utils.module';
 import { TotalPaneComponent } from './total-pane.component';
 
 describe('TotalPaneComponent', () => {
@@ -12,8 +11,8 @@ describe('TotalPaneComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TotalPaneComponent, ReaisPipe],
-      providers: [CurrencyPipe],
+      imports: [UtilsModule],
+      declarations: [TotalPaneComponent],
     }).compileComponents();
   }));
 

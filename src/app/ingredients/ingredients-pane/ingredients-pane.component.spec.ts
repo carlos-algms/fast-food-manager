@@ -1,11 +1,10 @@
-import { CurrencyPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 
 import ingredientsJson from '../../../../server/endpoints/ingredients/ingredients.json';
-import { ReaisPipe } from '../../utils/pipes/reais.pipe.js';
+import { UtilsModule } from '../../utils/utils.module.js';
 import { IngredientsService } from '../ingredients.service';
 import { IngredientsPaneComponent } from './ingredients-pane.component';
 
@@ -15,9 +14,9 @@ describe('IngredientsPaneComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      declarations: [IngredientsPaneComponent, ReaisPipe],
-      providers: [IngredientsService, CurrencyPipe],
+      imports: [HttpClientModule, UtilsModule],
+      declarations: [IngredientsPaneComponent],
+      providers: [IngredientsService],
     }).compileComponents();
   }));
 
