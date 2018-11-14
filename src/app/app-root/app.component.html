@@ -1,8 +1,8 @@
 <section class="fl-cols-container">
   <aside class="fl-rows-container fl-col-3 fl-gutter-5">
-    <app-recipes-pane></app-recipes-pane>
+    <app-recipes-pane (recipeClicked)="orderPane.replaceIngredients($event)"></app-recipes-pane>
 
-    <app-ingredients-pane (ingredientClick$)="orderPane.addIngredient($event)"></app-ingredients-pane>
+    <app-ingredients-pane (ingredientClicked)="orderPane.addIngredient($event)"></app-ingredients-pane>
   </aside>
 
   <aside class="fl-cols-container fl-gutter-5">

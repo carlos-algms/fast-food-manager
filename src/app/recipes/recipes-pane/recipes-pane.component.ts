@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { Ingredient } from '../../ingredients/ingredient';
 import { Recipe } from '../recipe';
 import { RecipesService } from '../recipes.service';
 
@@ -12,7 +13,7 @@ import { RecipesService } from '../recipes.service';
 export class RecipesPaneComponent {
   recipes$: Observable<Recipe[]>;
 
-  @Output() recipeClick$: EventEmitter<Recipe> = new EventEmitter();
+  @Output() recipeClicked: EventEmitter<Ingredient[]> = new EventEmitter();
 
   constructor(private recipesService: RecipesService) {
     this.recipes$ = this.requestRecipes();
@@ -22,8 +23,8 @@ export class RecipesPaneComponent {
     return this.recipesService.getAll();
   }
 
-  handleRecipeClick($event: Event, recipe) {
+  handleRecipeClick($event: Event, recipe: Recipe) {
     $event.preventDefault();
-    this.recipeClick$.emit(recipe);
+    this.recipeClicked.emit(recipe.ingredientsList);
   }
 }

@@ -33,7 +33,7 @@ fdescribe('RecipesPaneComponent', () => {
 
   it('should emit when click on a recipe', () => {
     createComponent();
-    const emitSpy = spyOn(component.recipeClick$, 'emit');
+    const emitSpy = spyOn(component.recipeClicked, 'emit');
     const clickSpy = spyOn(component, 'handleRecipeClick').and.callThrough();
 
     const firstItem = fixture.debugElement.nativeElement.querySelector('a');

@@ -12,7 +12,7 @@ import { IngredientsService } from '../ingredients.service';
 export class IngredientsPaneComponent {
   ingredients$: Observable<Ingredient[]>;
 
-  @Output() ingredientClick$: EventEmitter<Ingredient> = new EventEmitter();
+  @Output() ingredientClicked: EventEmitter<Ingredient> = new EventEmitter();
 
   constructor(private ingredientsService: IngredientsService) {
     this.ingredients$ = this.requestIngredients();
@@ -24,6 +24,6 @@ export class IngredientsPaneComponent {
 
   handleIngredientClick($event: MouseEvent, ingredient: Ingredient) {
     $event.preventDefault();
-    this.ingredientClick$.emit(ingredient);
+    this.ingredientClicked.emit(ingredient);
   }
 }

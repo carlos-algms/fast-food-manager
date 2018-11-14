@@ -34,7 +34,7 @@ describe('IngredientsPaneComponent', () => {
 
   it('should emit when click on an ingredient', () => {
     createComponent();
-    const emitSpy = spyOn(component.ingredientClick$, 'emit');
+    const emitSpy = spyOn(component.ingredientClicked, 'emit');
     const clickSpy = spyOn(component, 'handleIngredientClick').and.callThrough();
 
     const firstItem = fixture.debugElement.nativeElement.querySelector('a');
