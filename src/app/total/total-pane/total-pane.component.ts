@@ -22,12 +22,12 @@ export class TotalPaneComponent implements OnChanges {
     this.calculateValues(ingredientsList.currentValue);
   }
 
-  calculateValues(ingredientsList: Ingredient[]) {
+  private calculateValues(ingredientsList: Ingredient[]) {
     this.ingredientsSum = Array.from(ingredientsList).reduce(this.ingredientsSumReducer, 0);
     this.total = this.ingredientsSum - this.discountsSum;
   }
 
-  ingredientsSumReducer(total: number, ingredient: Ingredient) {
+  private ingredientsSumReducer(total: number, ingredient: Ingredient) {
     return total + ingredient.total;
   }
 }

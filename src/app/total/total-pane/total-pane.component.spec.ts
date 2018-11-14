@@ -1,5 +1,9 @@
+import { CurrencyPipe } from '@angular/common';
+import { SimpleChange } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { Ingredient } from '../../ingredients/ingredient';
+import { ReaisPipe } from '../../utils/pipes/reais.pipe';
 import { TotalPaneComponent } from './total-pane.component';
 
 describe('TotalPaneComponent', () => {
@@ -8,9 +12,9 @@ describe('TotalPaneComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TotalPaneComponent ]
-    })
-    .compileComponents();
+      declarations: [TotalPaneComponent, ReaisPipe],
+      providers: [CurrencyPipe],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +23,15 @@ describe('TotalPaneComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should sum ingredients value', () => {
+    const ingredientsList = [new Ingredient(1, 'test', 2, 5), new Ingredient(2, 'test', 3, 3)];
+    const expectedTotal = ingredientsList.reduce((total, ingredient) => total + ingredient.total, 0);
+
+    component.ngOnChanges({
+      ingredientsList: new SimpleChange(null, ingredientsList, true),
+    });
+    fixture.detectChanges();
+
+    expect(component.ingredientsSum).toEqual(expectedTotal);
   });
 });
