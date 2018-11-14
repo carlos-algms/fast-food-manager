@@ -11,12 +11,13 @@ import { RecipesPaneComponent } from './recipes/recipes-pane/recipes-pane.compon
 import { RecipesService } from './recipes/recipes.service';
 import { ReaisPipe } from './utils/pipes/reais.pipe';
 import { OrderPaneComponent } from './order/order-pane/order-pane.component';
+import { TotalPaneComponent } from './total/total-pane/total-pane.component';
 
 registerLocaleData(pt, 'pt-BR');
 
 @NgModule({
   imports: [BrowserModule, CommonModule, HttpClientModule],
-  declarations: [AppComponent, RecipesPaneComponent, IngredientsPaneComponent, ReaisPipe, OrderPaneComponent],
+  declarations: [AppComponent, RecipesPaneComponent, IngredientsPaneComponent, ReaisPipe, OrderPaneComponent, TotalPaneComponent],
   providers: [IngredientsService, RecipesService, CurrencyPipe],
   bootstrap: [AppComponent],
 })

@@ -35,8 +35,8 @@ describe('OrderPaneComponent', () => {
     component.addIngredient(ingredient);
     component.addIngredient(anotherIngredient);
 
-    expect(component.orderIngredients.has(ingredient.id)).toBeTruthy();
-    expect(component.orderIngredients.has(anotherIngredient.id)).toBeTruthy();
+    expect(component.ingredientsMap.has(ingredient.id)).toBeTruthy();
+    expect(component.ingredientsMap.has(anotherIngredient.id)).toBeTruthy();
 
     fixture.detectChanges();
 
@@ -53,6 +53,6 @@ describe('OrderPaneComponent', () => {
     const items = fixture.debugElement.queryAll(By.css('.list-group-item'));
     expect(items.length).toEqual(1);
 
-    expect(component.orderIngredients.get(ingredient.id).amount).toEqual(2);
+    expect(component.ingredientsMap.get(ingredient.id).amount).toEqual(2);
   });
 });

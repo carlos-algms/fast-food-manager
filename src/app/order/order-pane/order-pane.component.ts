@@ -8,15 +8,15 @@ import { Ingredient, IngredientBase } from '../../ingredients/ingredient';
   styleUrls: ['./order-pane.component.scss'],
 })
 export class OrderPaneComponent {
-  orderIngredients: Map<number, Ingredient> = new Map();
-  ingredientsList: IterableIterator<Ingredient>;
+  ingredientsMap: Map<number, Ingredient> = new Map();
+  ingredientsList: Ingredient[];
 
   addIngredient = ({ id, name, value, amount = 0 }: IngredientBase) => {
-    const existentIngredient = this.orderIngredients.get(id);
+    const existentIngredient = this.ingredientsMap.get(id);
     const effectiveAmount = existentIngredient ? existentIngredient.amount : amount;
     const ingredient = new Ingredient(id, name, value, effectiveAmount + 1);
 
-    this.orderIngredients.set(id, ingredient);
-    this.ingredientsList = this.orderIngredients.values();
+    this.ingredientsMap.set(id, ingredient);
+    this.ingredientsList = Array.from(this.ingredientsMap.values());
   };
 }
